@@ -1,0 +1,29 @@
+The uniq command is basically used to remove all repeated lines in a file.
+
+-d Display the repeated lines.
+-u Display the line that are not repeated.
+-c it tells how many times a line was repeated by displaying a number as a prefix with the line.
+-w it only compares N characters in a line.
+-s to skip comparing the first N number of characters in each line.
+
+Example1: It tells the number of times a line was repeated.
+root@Jayasri:~# uniq -c fruits.txt
+      2 Apples are rich in Vitamin C.
+      2 Apples can balance sugar levels in the body.
+      1 Apples are part of the rose family. 
+
+Example2:It only prints the repeated lines.
+root@Jayasri:~# uniq -d fruits.txt
+Apples are rich in Vitamin C.
+Apples can balance sugar levels in the body.
+
+Exampple3:It prints only the unique lines.
+root@Jayasri:~# uniq -u fruits.txt
+Apples are part of the rose family.
+
+Example4:It skips N characters but not N fields.
+root@Jayasri:~# uniq -s 3 fruits.txt
+Apples are rich in Vitamin C.
+Apples can balance sugar levels in the body.
+Apples are part of the rose family.
+
