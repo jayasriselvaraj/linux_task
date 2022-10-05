@@ -1,0 +1,45 @@
+Sed
+
+Linux 'sed' command stands for stream editor. It is used to edit streams (files) using regular expressions. But this editing is not permanent. It remains only in display, but in actual, file content remains the same.
+
+-sIt is mostly used to replace the text in a file
+-gTo replace all the occurrences of the string in the line.
+-p Prints the replaced line twice on the terminal. If a line does not have the search pattern and is not replaced, then the /p prints that line only once.
+-dIt is used for deleting lines from a particular file
+
+Example1:It is mostly used to replace the text in a file
+root@Jayasri:~# sed 's/Apple/Grapes/' fruits.txt
+Grapes are my favorite fruit.
+Grapes are a rich source of Vitamin c.
+Doctors suggest Grapes eat for better health.
+There are small seeds inside the Grapes, and we should eat a minimum of one Apple a day.
+
+Example2: To replace all the occurrences of the string in the line.
+root@Jayasri:~# sed 's/Apple/Grapes/g' fruits.txt
+Grapes is my favorite fruit.
+Grapes is a rich source of Vitamin c.
+Doctors suggest Grapes to eat for better health.
+There are small seeds inside the Grapes and we should eat a minimum of one Grapes a day.
+
+
+Example3: The combination of /1, /2 etc, and /g to replace all the patterns from the nth occurrence of a pattern in a line. 
+root@Jayasri:~# sed 's/Apple/Carrot/2' fruits.txt
+Apple is my favorite fruit. Carrot is a rich source of Vitamin c.
+Doctors suggest Apple to eat for better health.
+There are small seeds inside the Apple and we should eat a minimum of one Carrot a day.
+
+Example4: Prints the replaced line twice on the terminal. 
+root@Jayasri:~# sed 's/Apple/Carrot/p' fruits.txt
+Carrot is my favorite fruit. Apple is a rich source of Vitamin c.
+Carrot is my favorite fruit. Apple is a rich source of Vitamin c.
+Doctors suggest Carrot to eat for better health.
+Doctors suggest Carrot to eat for better health.
+There are small seeds inside the Carrot and we should eat a minimum of one Apple a day.
+There are small seeds inside the Carrot and we should eat a minimum of one Apple a day.
+
+Example5: To Delete a particular line 
+root@Jayasri:~# sed '3d' fruits.txt
+Apple is my favorite fruit. Apple is a rich source of Vitamin c.
+Doctors suggest Apple to eat for better health.
+
+                                                      
