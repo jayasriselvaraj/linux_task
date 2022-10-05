@@ -1,0 +1,36 @@
+The read command asks for the user’s input and exit once the user provides some input.
+
+-a Assigns the provided word sequence to a variable named<array>.
+-d Reads a line until the provided <delimiter> instead of a new line.
+-eStarts an interactive shell session to obtain the line to read
+.-i Adds initial text before reading a line as a prefix.-
+-nReturns after reading the specified number of characters while honoring the delimiter to terminate early.
+-NReturns after reading the specified number of chars, ignoring the delimiter.
+-pOutputs the prompt string before reading user input
+.-rDisable backslashes to escape characters.-sDoes not echo the user's input.
+-tThe command times out after the specified time in seconds.
+-uRead from file descriptor instead of standard input.
+
+
+Example1:
+root@Jayasri:~# echo "what is your name..?";read name;echo "hello $name"
+what is your name..?
+jayasri
+hello jayasri
+
+Example2:
+root@Jayasri:~# read -p "Enter Name:"
+Enter Name:jayasri
+root@Jayasri:~# echo yournname is $name.
+yournname is jayasri.
+
+Example3: The read command offers the -s tag to hide sensitive information input. A common use case is to combine -s with the -p tag to create a password prompt.
+root@Jayasri:~# read -p "Enter password: "$'\n' -s password
+Enter password:
+
+Example4:
+root@Jayasri:~# read -a array <<< "fruits apple"
+root@Jayasri:~# echo ${array[1]}
+apple
+root@Jayasri:~# echo ${array[0]}
+fruits
