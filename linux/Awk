@@ -1,0 +1,30 @@
+Awk
+
+ It allows users to process and manipulate data and produce formatted reports. The tool supports various operations for advanced text processing and facilitates expressing complex data selections.
+
+-FIt is used to specify a file separator. The default separator is a blank space.
+-fIt is used to specify the file containing the awk script. Reads the awk program source from the specified file, instead of the first command-line argument.
+-vIt is used to assign a variable.
+
+Example1: By default Awk prints every line of data from the specified file.
+root@Jayasri:~#  awk '{print}' employee_details.txt
+james 1234 60,0000
+robert 5678 10,0000
+john 58457 450,0000
+nick 2390 670,000
+tom 12390 890,444
+
+Example2:Splitting a Line Into Fields
+root@Jayasri:~# awk '{print $1,$4}' employee_details.txt
+james
+robert
+john
+nick
+tom
+
+Example3: use of NR built-in variables (Display Line From 3 to 6)  
+root@Jayasri:~# awk 'NR==2, NR==5 {print NR,$0}' employee_details.txt
+2 robert 5678 10,0000
+3 john 58457 450,0000
+4 nick 2390 670,000
+5 tom 12390 890,444
