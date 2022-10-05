@@ -1,0 +1,33 @@
+Wc
+
+It is used to find out the number of lines, word count, byte, and character count in the files specified in the file arguments.
+-cThis option displays count of bytes present in a file
+-mcommand displays count of characters from a file
+-lit can be used to print out the length of longest (number of characters) line in a file
+-wThis option prints the number of words present in a file
+
+Example1: Passing only one file name in the argument.
+root@Jayasri:~# wc fruits.txt
+ 8  6 73 fruits.txt
+
+Example2: Passing more than one file name in the argument.
+root@Jayasri:~# wc fruits.txt pounds.txt
+ 8  6 73 fruits.txt
+ 8  7 19 pounds.txt
+16 13 92 total
+
+Example3: With one file name
+root@Jayasri:~# wc -l fruits.txt
+8 fruits.txt
+
+Example4: This option displays count of bytes 
+root@Jayasri:~# wc -c fruits.txt pounds.txt
+73 fruits.txt
+19 pounds.txt
+92 total
+
+Example5: count characters
+root@Jayasri:~# wc -m fruits.txt pounds.txt
+73 fruits.txt
+19 pounds.txt
+92 total
