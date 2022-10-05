@@ -1,0 +1,29 @@
+
+Cut
+
+ The cut command slices a line and extracts the text. It is necessary to specify an option with a command otherwise it gives an error
+-bIt is used to specify a byte, a byte set, or a byte range.
+-cSelect using a specified character, a character set, or a character range.
+-fSelect using a specified field, a field set, or a field range.
+-complement This option instructs cut to display all the bytes, characters, or fields, except the selected.
+-dUsed to specify a delimiter to use instead of the default TAB delimiter.
+-s This option instructs cut not to print the lines that don't contain delimiters.
+-output delimiterThis option allows you to specify a different output delimiter.
+
+Example1: List without ranges
+root@Jayasri:~#  cut -b 1,2,3 fruits.txt
+App
+Doc
+The
+
+Exampl2:  As the name suggests it complement the output
+root@Jayasri:~# cut --complement -c 5 fruits.txt
+Fruis apple
+Vegges carrots
+Counry usa
+
+Example3: the output delimiter is same as input delimiter that we specify in the cut with -d option. To change the output delimiter use the option –output-delimiter=”delimiter”.
+root@Jayasri:~# cut -d " " -f 1,2 fruits.txt --output-delimiter='%'
+Fruits%apple
+Veggies%carrots
+Country%usa
